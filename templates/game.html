@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <title>snake water game</title>
+        
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    </head>
+    <body class="bg">
+
+        <div class="top-section">
+           
+            
+            <img src="{{ url_for('static', filename='pic1.jpeg') }}" class="side-img">
+            <div class="heading">
+                <h1>Hello!<br>Please click one of the options below to get the result</h1>
+                
+            </div>
+   
+            <img src="{{ url_for('static', filename='pic2.jpeg') }}" class="side-img">
+        </div>
+        <div class="game_bg">
+
+    <div class="option">
+        
+       
+        <img src="{{ url_for('static', filename='snake.jpeg') }}" alt="Snake">
+        
+        <a href="/play/snake"><button>Snake</button></a>
+    </div>
+
+    <div class="option">
+       
+       
+        <img src="{{ url_for('static', filename='water.jpeg') }}" alt="Water">
+        
+        <a href="/play/water"><button>Water</button></a>
+    </div>
+
+    <div class="option">
+       
+        
+        <img src="{{ url_for('static', filename='gun.jpeg') }}" alt="Gun">
+        
+        <a href="/play/gun"><button>Gun</button></a>
+    </div>
+
+</div>
+{% if result %}
+<div class="result">
+   
+    <h2>You chose: {{ user }} 🐍💧🔫</h2>
+<h2>Computer chose: {{ computer }}</h2>
+    
+    {% if result == "You Win!" %}
+<h1 style="color:green">{{ result }}</h1>
+
+{% elif result == "You Lose!" %}
+<h1 style="color:red">{{ result }}</h1>
+
+{% else %}
+<h1 style="color:orange">{{ result }}</h1>
+{% endif %}
+
+    <a href="/game">
+    <button>Play Again</button>
+</a>
+</div>
+{% endif %}
+
+    </body>
+
+
+    
+</html>

@@ -1,0 +1,33 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>
+        snake water game</title>
+        
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    </head>
+
+    
+            
+
+             <body style="background-image: url('{{ url_for('static', filename='snake_pic.jpeg') }}');
+             background-size: cover;
+             background-repeat: no-repeat;">
+
+
+<div  class="title">
+    <h1>Welcome!<br> click the start button to start the game</h1>
+    <a href="{{ url_for('game') }}">
+         <button class="start-btn">START</button>
+    </a>
+    
+</div>
+        
+
+
+
+        </body>
+        
+    
+</html>
